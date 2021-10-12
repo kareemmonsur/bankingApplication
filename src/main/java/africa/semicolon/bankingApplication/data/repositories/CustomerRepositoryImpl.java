@@ -2,16 +2,23 @@ package africa.semicolon.bankingApplication.data.repositories;
 
 import africa.semicolon.bankingApplication.data.models.Customer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerRepositoryImpl implements CustomerRepository{
+    private  List<Customer> customers = new ArrayList<>();
     @Override
     public Customer save(Customer customer) {
-        return customer;
+        customers.add(customer);
+        Customer foundCustomer = findByCustomerId(customer.getBvn());
+        return foundCustomer;
     }
 
     @Override
     public Customer findByCustomerId(String id) {
+        for (Customer customer: customers) {
+            if (customer.getBvn().equalsIgnoreCase(id)) return  customer;
+        }
         return null;
     }
 

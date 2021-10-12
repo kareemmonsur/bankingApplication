@@ -32,6 +32,15 @@ class customerRepositoryImplTest {
 
     @Test
     void findByCustomerId() {
+        var customer = new Customer();
+        var bvn = new Bvn("23355", customer);
+        customer.setBvn(bvn.getId());
+        customer.setFirstName("ojo");
+        customer.setLastName("imma");
+        Customer savedCustomer = customerRepository.save(customer);
+        var foundCustomer = customerRepository.findByCustomerId("23355");
+        assertEquals(savedCustomer, foundCustomer);
+
     }
 
     @Test
