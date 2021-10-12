@@ -24,16 +24,17 @@ public class CustomerRepositoryImpl implements CustomerRepository{
 
     @Override
     public void delete(Customer customer) {
-
+        customers.remove(customer);
     }
 
     @Override
     public void delete(String id) {
-
+      Customer customer = findByCustomerId(id);
+      delete(customer);
     }
 
     @Override
     public List<Customer> findAll() {
-        return null;
+        return customers;
     }
 }

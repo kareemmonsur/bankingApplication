@@ -45,13 +45,49 @@ class customerRepositoryImplTest {
 
     @Test
     void delete() {
+        Customer customer = new Customer();
+        Bvn bvn = new Bvn("23355", customer);
+        customer.setBvn(bvn.getId());
+        customer.setFirstName("ojo");
+        customer.setLastName("imma");
+        customerRepository.save(customer);
+
+        assertNotNull(customerRepository.findByCustomerId("23355"));
+
+        customerRepository.delete("23355");
+
+        assertNull(customerRepository.findByCustomerId("23355"));
     }
 
     @Test
     void testDelete() {
+        Customer customer = new Customer();
+        Bvn bvn = new Bvn("23355", customer);
+        customer.setBvn(bvn.getId());
+        customer.setFirstName("ojo");
+        customer.setLastName("imma");
+        customerRepository.save(customer);
+
+        assertNotNull(customerRepository.findByCustomerId("23355"));
+
+        customerRepository.delete("23355");
+
+        assertNull(customerRepository.findByCustomerId("23355"));
+
     }
 
     @Test
     void findAll() {
+        Customer customer = new Customer();
+        Bvn bvn = new Bvn("23355", customer);
+        customer.setBvn(bvn.getId());
+        customer.setFirstName("ojo");
+        customer.setLastName("imma");
+        customerRepository.save(customer);
+        customerRepository.save(customer);
+        customerRepository.save(customer);
+
+        assertEquals(3, customerRepository.findAll().size());
+
     }
 }
