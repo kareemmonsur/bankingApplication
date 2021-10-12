@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 public class Customer {
-    private Bvn bvn;
+    private String bvn;
     private List <Account> account = new ArrayList<Account>();
     private String firstName;
     private String lastName;
