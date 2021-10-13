@@ -6,6 +6,7 @@ import africa.semicolon.bankingApplication.data.models.Bank;
 public interface BankRepository {
     Bank save(Bank bank);
 
+    bank findBankId(String id);
 }
 
 

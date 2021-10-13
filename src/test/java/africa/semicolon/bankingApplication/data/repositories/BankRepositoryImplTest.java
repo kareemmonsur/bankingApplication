@@ -29,19 +29,17 @@ public class BankRepositoryImplTest {
         assertEquals(bank, savedBank);
     }
 
-//    @Test
-//    void findByCustomerId() {
-//        var customer = new Customer();
-//        var bvn = new Bvn("23355", customer);
-//        customer.setBvn(bvn.getId());
-//        customer.setFirstName("ojo");
-//        customer.setLastName("imma");
-//        Customer savedCustomer = customerRepository.save(customer);
-//        var foundCustomer = customerRepository.findByCustomerId("23355");
-//        assertEquals(savedCustomer, foundCustomer);
-//
-//    }
-//
+    @Test
+    void findByCustomerId() {
+        Bank bank = new Bank("1");
+        bank.setName("gtb");
+        Bank savedBank = bankRepository.save(bank);
+
+        bank foundBank = bankRepository.findBankId("1");
+        assertEquals(savedBank, foundBank);
+
+    }
+
 //    @Test
 //    void delete() {
 //        Customer customer = new Customer();
