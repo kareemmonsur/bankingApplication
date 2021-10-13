@@ -10,48 +10,18 @@ import java.util.List;
 
     public class BankRepositoryImpl implements BankRepository {
         private List<Bank> banks = new ArrayList<>();
+        private Bank bank;
+
+//        @Override
+//        public String createAccount(String bankId, String firstName, String lastName) {
+//            banks.add(bank);
+//            return bank;
+//        }
+
+
 
         @Override
         public Bank save(Bank bank) {
-            banks.add(bank);
             return bank;
         }
-
-        @Override
-        public Bank findBankById(String id) {
-            for (Bank bank : banks) {
-                if (bank.getBankId().equalsIgnoreCase(id)) return bank;
-            }
-            return null;
-        }
-
-        @Override
-        public void delete(Bank bank) {
-            banks.remove(bank);
-
-        }
-
-        @Override
-        public Bank save(Bank bank) {
-            return null;
-        }
-
-        @Override
-        public Bank findBankById(String id) {
-            return null;
-        }
-
-        @Override
-        public void delete(Bank bank) {
-
-        }
-
-        @Override
-        public void delete(String id) {
-            Bank bank = findBankById(id);
-            delete(bank);
-
-        }
-
     }
-}
