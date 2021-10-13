@@ -70,10 +70,9 @@ class customerRepositoryImplTest {
 
         assertNotNull(customerRepository.findByCustomerId("23355"));
 
-        customerRepository.delete (customer);
+        customerRepository.delete(customer);
 
         assertNull(customerRepository.findByCustomerId("23355"));
-
     }
 
     @Test

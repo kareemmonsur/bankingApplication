@@ -78,7 +78,11 @@ class AccountRepositoryImplTest {
         account.setType(accountType.SAVINGS);
         Account savedAccount = accountRepository.save(account);
 
+        assertNotNull(accountRepository.findAccountById("3444556667"));
 
+        accountRepository.delete(account);
+
+        assertNull(accountRepository.findAccountById("3444556667"));
     }
 
 }

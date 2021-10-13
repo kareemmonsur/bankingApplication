@@ -4,7 +4,7 @@ import africa.semicolon.bankingApplication.data.models.Customer;
 import africa.semicolon.bankingApplication.data.repositories.CustomerRepository;
 
 public interface CustomerService{
-    Customer createAccount(String firstName, String lastName);
+    String createAccount(String firstName, String lastName);
 
-    Customer createAccount(String firstName, String lastName, String bvn);
+    String createAccount(String firstName, String lastName, String bvn);
 }
